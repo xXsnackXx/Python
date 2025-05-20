@@ -12,7 +12,7 @@ wn.setup(width=800, height=640)
 wn.tracer(0)
 
 line_drawerb = turtle.Turtle()
-line_drawerb.color("white")
+line_drawerb.color("red")
 line_drawerb.pensize(3)
 
 # Move to start position without drawing
@@ -26,7 +26,7 @@ line_drawerb.pendown()
 line_drawerb.forward(2000)  # Length of line
 
 line_drawera = turtle.Turtle()
-line_drawera.color("white")
+line_drawera.color("red")
 line_drawera.pensize(3)
 
 # Move to start position without drawing
@@ -71,8 +71,8 @@ ball.color("pink")
 ball.shapesize(stretch_wid=1, stretch_len=1)
 ball.penup()
 ball.goto(0, 0)
-ball.dx = .05
-ball.dy = .05
+ball.dx = .2
+ball.dy = .2
 
 # Pen
 
