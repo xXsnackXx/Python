@@ -11,34 +11,49 @@ wn.bgcolor("black")
 wn.setup(width=800, height=640)
 wn.tracer(0)
 
-line_drawerb = turtle.Turtle()
-line_drawerb.color("red")
-line_drawerb.pensize(3)
+# Draw bottom line bound
 
-# Move to start position without drawing
+line_drawerb = turtle.Turtle()
+line_drawerb.color("white")
+line_drawerb.pensize(3)
 line_drawerb.penup()
 line_drawerb.goto(-1000, -300)  # Starting point (x, y)
 line_drawerb.pendown()
-
-
-
-# Draw the horizontal line
 line_drawerb.forward(2000)  # Length of line
 
-line_drawera = turtle.Turtle()
-line_drawera.color("red")
-line_drawera.pensize(3)
+# Draw upper line bound
 
-# Move to start position without drawing
+line_drawera = turtle.Turtle()
+line_drawera.color("white")
+line_drawera.pensize(3)
 line_drawera.penup()
 line_drawera.goto(-1000, 300)  # Starting point (x, y)
 line_drawera.pendown()
-
-
-
-# Draw the horizontal line
 line_drawera.forward(2000)  # Length of line
 
+# Draw left vert line 
+
+line_drawerl = turtle.Turtle()
+line_drawerl.color("red")
+line_drawerl.pensize(3)
+line_drawerl.hideturtle()
+line_drawerl.penup()
+line_drawerl.goto(-395, -300)  # Starting point (x, y)
+line_drawerl.setheading(90)
+line_drawerl.pendown()
+line_drawerl.forward(600)  # Length of line
+
+# Draw right vert line 
+
+line_drawerl = turtle.Turtle()
+line_drawerl.color("red")
+line_drawerl.pensize(3)
+line_drawerl.hideturtle()
+line_drawerl.penup()
+line_drawerl.goto(395, -300)  # Starting point (x, y)
+line_drawerl.setheading(90)
+line_drawerl.pendown()
+line_drawerl.forward(600)  # Length of line
 
 # Score
 score_a = 0

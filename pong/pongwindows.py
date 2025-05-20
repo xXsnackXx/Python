@@ -8,36 +8,56 @@ import winsound
 wn = turtle.Screen()
 wn.title("pong by @voidland")
 wn.bgcolor("black")
-wn.setup(width=800, height=640)
+wn.setup(width=850, height=640)
 wn.tracer(0)
+
+# Draw bottom line bound
 
 line_drawerb = turtle.Turtle()
 line_drawerb.color("white")
 line_drawerb.pensize(3)
-
-# Move to start position without drawing
 line_drawerb.penup()
 line_drawerb.goto(-1000, -300)  # Starting point (x, y)
 line_drawerb.pendown()
-
-
-
-# Draw the horizontal line
 line_drawerb.forward(2000)  # Length of line
+
+# Draw upper line bound
 
 line_drawera = turtle.Turtle()
 line_drawera.color("white")
 line_drawera.pensize(3)
-
-# Move to start position without drawing
 line_drawera.penup()
 line_drawera.goto(-1000, 300)  # Starting point (x, y)
 line_drawera.pendown()
-
-
-
-# Draw the horizontal line
 line_drawera.forward(2000)  # Length of line
+
+# Draw left vert line 
+
+line_drawerl = turtle.Turtle()
+line_drawerl.color("red")
+line_drawerl.pensize(3)
+line_drawerl.hideturtle()
+line_drawerl.penup()
+line_drawerl.goto(-395, -300)  # Starting point (x, y)
+line_drawerl.setheading(90)
+line_drawerl.pendown()
+line_drawerl.forward(600)  # Length of line
+
+# Draw right vert line 
+
+line_drawerl = turtle.Turtle()
+line_drawerl.color("red")
+line_drawerl.pensize(3)
+line_drawerl.hideturtle()
+line_drawerl.penup()
+line_drawerl.goto(395, -300)  # Starting point (x, y)
+line_drawerl.setheading(90)
+line_drawerl.pendown()
+line_drawerl.forward(600)  # Length of line
+
+
+
+
 
 # Score
 score_a = 0
