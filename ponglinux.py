@@ -3,7 +3,7 @@
 
 
 import turtle
-import winsound 
+import subprocess
 
 wn = turtle.Screen()
 wn.title("pong by @voidland")
@@ -101,13 +101,14 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
-        winsound.PlaySound(r"C:\Users\Devon\Documents\GITREPOS\Python\pong\pongwallsound.wav", winsound.SND_ASYNC)
+        subprocess.Popen(["aplay", "/home/void/Documents/Python/pong/pongwallsound.wav"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
 
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
-        winsound.PlaySound(r"C:\Users\Devon\Documents\GITREPOS\Python\pong\pongwallsound.wav", winsound.SND_ASYNC)
-
+        subprocess.Popen(["aplay", "/home/void/Documents/Python/pong/pongwallsound.wav"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
         # point logic update
 
     if ball.xcor() > 390:
@@ -116,7 +117,8 @@ while True:
         score_a += 1
         pen.clear()
         pen.write("Player A: {} Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
-        winsound.PlaySound(r"C:\Users\Devon\Documents\GITREPOS\Python\pong\pongpointsound2.wav", winsound.SND_ASYNC)
+        subprocess.Popen(["aplay", "/home/void/Documents/Python/pong/pongpointsound2.wav"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
 
     if ball.xcor() < -390:
         ball.goto(0, 0)
@@ -124,15 +126,17 @@ while True:
         score_b += 1
         pen.clear()
         pen.write("Player A: {} Player B: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
-        winsound.PlaySound(r"C:\Users\Devon\Documents\GITREPOS\Python\pong\pongpointsound2.wav", winsound.SND_ASYNC)
-
+        subprocess.Popen(["aplay", "/home/void/Documents/Python/pong/pongpointsound2.wav"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
     # Paddle and ball collisions
     if ball.xcor() > 340 and ball.xcor() < 350  and (ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50):
         ball.setx(340)
         ball.dx *= -1
-        winsound.PlaySound(r"C:\Users\Devon\Documents\GITREPOS\Python\pong\pongpaddlesound.wav", winsound.SND_ASYNC)
+        subprocess.Popen(["aplay", "/home/void/Documents/Python/pong/pongpaddlesound.wav"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
 
     if ball.xcor() < -340 and ball.xcor() > -350  and (ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50):
         ball.setx(-340)
         ball.dx *= -1
-        winsound.PlaySound(r"C:\Users\Devon\Documents\GITREPOS\Python\pong\pongpaddlesound.wav", winsound.SND_ASYNC)
+        subprocess.Popen(["aplay", "/home/void/Documents/Python/pong/pongpaddlesound.wav"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
