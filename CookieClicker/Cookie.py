@@ -25,7 +25,7 @@ clicks = 0
 
 pen = turtle.Turtle()
 pen.hideturtle()
-pen.color("white")
+pen.color("pink")
 pen.penup()
 pen.goto(0, 150)
 pen.write(f"Clicks: {clicks}", align="center", font=("Beach", 32))
@@ -44,12 +44,12 @@ def clicked(x, y):
     pen.write(f"Clicks: {clicks}", align="center", font=("Beach", 32, "normal"))
     winsound.PlaySound(r"C:\Users\Devon\Documents\GITREPOS\Python\CookieClicker\yukiclicksound.wav", winsound.SND_ASYNC)
 
-    # Change Img at 100 clicks
-    if clicks == 5:
+    # Change Img at 50 clicks
+    if clicks == 50:
         cookie.shape(r"C:\Users\Devon\Documents\GITREPOS\Python\CookieClicker\yukicute.gif")
 
     # Milestone 50 clicks message
-    if clicks == 5:
+    if clicks == 50:
         message.write("You got a new Yuki Pic!", align="center", font=("Beach", 24, "bold"))
 
 cookie.onclick(clicked)
