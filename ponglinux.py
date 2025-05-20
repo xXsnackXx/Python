@@ -11,6 +11,19 @@ wn.bgcolor("black")
 wn.setup(width=800, height=600)
 wn.tracer(0)
 
+line_drawer = turtle.Turtle()
+line_drawer.color("white")
+line_drawer.pensize(3)
+
+# Move to start position without drawing
+line_drawer.penup()
+line_drawer.goto(-200, 0)  # Starting point (x, y)
+line_drawer.pendown()
+
+# Draw the horizontal line
+line_drawer.forward(400)  # Length of line
+
+
 # Score
 score_a = 0
 score_b = 0
