@@ -8,20 +8,36 @@ import subprocess
 wn = turtle.Screen()
 wn.title("pong by @voidland")
 wn.bgcolor("black")
-wn.setup(width=800, height=600)
+wn.setup(width=800, height=640)
 wn.tracer(0)
 
-line_drawer = turtle.Turtle()
-line_drawer.color("white")
-line_drawer.pensize(3)
+line_drawerb = turtle.Turtle()
+line_drawerb.color("white")
+line_drawerb.pensize(3)
 
 # Move to start position without drawing
-line_drawer.penup()
-line_drawer.goto(-200, 0)  # Starting point (x, y)
-line_drawer.pendown()
+line_drawerb.penup()
+line_drawerb.goto(-1000, -300)  # Starting point (x, y)
+line_drawerb.pendown()
+
+
 
 # Draw the horizontal line
-line_drawer.forward(400)  # Length of line
+line_drawerb.forward(2000)  # Length of line
+
+line_drawera = turtle.Turtle()
+line_drawera.color("white")
+line_drawera.pensize(3)
+
+# Move to start position without drawing
+line_drawera.penup()
+line_drawera.goto(-1000, 300)  # Starting point (x, y)
+line_drawera.pendown()
+
+
+
+# Draw the horizontal line
+line_drawera.forward(2000)  # Length of line
 
 
 # Score

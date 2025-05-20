@@ -8,8 +8,36 @@ import winsound
 wn = turtle.Screen()
 wn.title("pong by @voidland")
 wn.bgcolor("black")
-wn.setup(width=800, height=600)
+wn.setup(width=800, height=640)
 wn.tracer(0)
+
+line_drawerb = turtle.Turtle()
+line_drawerb.color("white")
+line_drawerb.pensize(3)
+
+# Move to start position without drawing
+line_drawerb.penup()
+line_drawerb.goto(-1000, -300)  # Starting point (x, y)
+line_drawerb.pendown()
+
+
+
+# Draw the horizontal line
+line_drawerb.forward(2000)  # Length of line
+
+line_drawera = turtle.Turtle()
+line_drawera.color("white")
+line_drawera.pensize(3)
+
+# Move to start position without drawing
+line_drawera.penup()
+line_drawera.goto(-1000, 300)  # Starting point (x, y)
+line_drawera.pendown()
+
+
+
+# Draw the horizontal line
+line_drawera.forward(2000)  # Length of line
 
 # Score
 score_a = 0
@@ -42,8 +70,8 @@ ball.color("pink")
 ball.shapesize(stretch_wid=1, stretch_len=1)
 ball.penup()
 ball.goto(0, 0)
-ball.dx = .05
-ball.dy = .05
+ball.dx = .09
+ball.dy = .09
 
 # Pen
 
