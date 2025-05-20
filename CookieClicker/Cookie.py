@@ -4,26 +4,6 @@
 import turtle
 import winsound
 
-def shake_cookie():
-    shake_distance = 5
-    shake_times = 1
-    delay = 50  # milliseconds
-
-    original_x = cookie.xcor()
-    original_y = cookie.ycor()
-
-    def shake_step(i):
-        if i >= shake_times:
-            cookie.goto(original_x, original_y)
-            return
-        offset = shake_distance if i % 2 == 0 else -shake_distance
-        cookie.goto(original_x + offset, original_y)
-        wn.ontimer(lambda: shake_step(i + 1), delay)
-
-    shake_step(0)
-
-
-
 
 
 
@@ -72,7 +52,7 @@ def clicked(x, y):
     pen.clear()
     pen.write(f"Clicks: {clicks}", align="center", font=("Beach", 32, "normal"))
     winsound.PlaySound(r"C:\Users\Devon\Documents\GITREPOS\Python\CookieClicker\yukiclicksound.wav", winsound.SND_ASYNC)
-    shake_cookie()
+    
 
     # Change Img at 50 clicks
     if clicks == 50:
