@@ -4,7 +4,7 @@
 import turtle
 import time
 
-delay = 0.1
+delay = 0.19
 
 turtle.bgpic(r"C:\Users\Devon\Documents\GITREPOS\Python\Snake\animesnakebg.png")
 
@@ -24,7 +24,7 @@ head.shape("circle")
 head.color("#00FF00")
 head.penup()
 head.goto(0, 0)
-head.direction = "stop"
+head.direction = "up"
 
 # Functions
 def move():
@@ -32,8 +32,20 @@ def move():
         y = head.ycor()
         head.sety(y + 20)
 
+    if head.direction == "down":
+        y = head.ycor()
+        head.sety(y - 20)
+
+    if head.direction == "left":
+        x = head.xcor()
+        head.setx(x - 20)
+
+    if head.direction == "right":
+        x = head.xcor()
+        head.setx(x + 20)
+
 # Main Game loop
-# while True:
+while True:
     wn.update()
 
     move()
