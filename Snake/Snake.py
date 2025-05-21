@@ -6,6 +6,7 @@ import time
 import subprocess
 import os
 import signal
+import random
 # IMPORT---------------------
 
 music_proc = subprocess.Popen(["python", r"C:\Users\Devon\Documents\GITREPOS\Python\Snake\soundtest.py"],
@@ -39,8 +40,10 @@ food.speed(0)
 food.shape("square")
 food.color("red")
 food.penup()
-food.goto(20, 0)
-food.direction = "stop"
+food.goto(0, 100)
+
+segments = []
+
 
 
 
@@ -83,13 +86,42 @@ wn.onkeypress(go_down, "s")
 wn.onkeypress(go_left, "a")
 wn.onkeypress(go_right, "d")
 
+# Check for collison 
+if head.distance(food) < 20:
+     # Move the food random
+    x = random.randint(-290, 290)
+    y = random.randint(-290, 290)
+    food.goto(x, y)
+
+            # Add a segment
+    new_segment = turtle.Turtle
+    new_segment.speed(0)
+    new_segment.shape("circle")
+    new_segment.color("grey")
+    new_segment.penup()
+    segments.append(new_segment)
+
+    # Move the end segments first in reverse order
+for index in range(len(segments)-1, 0, -1):
+    x = segments[index-1].xcor()
+    y = segments[index-1].ycor()
+    segments[index].goto(x, y)
+
+    # Move segment 0 to where the head is
+    if len(segments) > 0:
+        y = head.xcor()
+        x = head.ycor()
+        segments[0].goto(x, y)
+
 
 
 # Main Game loop
 try:
     while True:
         wn.update()
+
         move()
+        
         time.sleep(delay)
 except turtle.Terminator:
     pass
@@ -97,3 +129,5 @@ finally:
     # Cleanly stop the music when the game window is closed
     if music_proc.poll() is None:  # Still running
         music_proc.terminate()
+
+wn.mainloop()
