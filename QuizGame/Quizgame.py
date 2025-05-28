@@ -7,7 +7,7 @@ print("Welcome to my leauge quiz")
 playing = input("Want to take my leauge quiz? ")
 
 if playing != "yes".lower():
-    print("fuck you")
+    print("Then why did you open me!")
     quit()
 print("Okay lets play")
 
@@ -44,6 +44,6 @@ else:
     print("Nope!")
     print("Nope!")
 
-print(f"You got {score} of 4 questions correct!")
+print(f"You got {score} of 4 questions correct! ({(score / 4) * 100}%)")
                
     
