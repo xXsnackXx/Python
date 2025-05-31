@@ -33,10 +33,9 @@ while True:
         #below one last way to print with var
         print("it took you " + str(guesses) + " guesses!: with +")
         break
+    elif user_guess > random_number:
+        print("too high")
     else:
-        if user_guess > random_number:
-            print("too high")
-        else:
-            print("too low")
+        print("too low")
         guesses += 1
 
